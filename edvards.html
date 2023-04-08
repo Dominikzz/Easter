@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Codefather</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#riddle{
+  margin: 20px 0;
+  width: 900px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+input[type="text"]{
+  text-align: center;
+  width: 30%;
+  padding: 0.5rem;
+  margin: 30px 0;
+  background-color: #ffffff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #000;
+}
+
+button {
+  padding: 0.5rem 2rem;
+  background-color: #ffffff;
+  border: 1px solid #000;
+  color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #000;
+  color: #ffffff;
+}
+
+#feedback {
+  margin-top: 40px;
+}
+  </style>
+</head>
+<body>
+  <h1>Laipni lūdzam, Codefather</h1>
+  <p id="riddle"></p>
+  <input type="text" id="answer" placeholder="Ievadiet atbildi šeit...">
+  <button onclick="submitAnswer()">Iesniegt</button>
+  <div id="feedback"></div>
+
+  <script>
+    const riddles = [
+      { question: "Es esmu horizontāls stars, kurā tiek pārbaudīti tavas spējas, kur jūs pakaraties un stājaties pretim izaicinājumam. Kas es esmu?", answer: "brīvpiekļuves atmiņa" },
+      { question: "Es esmu spēle, kas notiek plašos, zaļos laukos, kur iespējas ir neierobežotas, un precizitāte ir atslēga. Kāda spēle es esmu?", answer: "1.618" },
+      { question: "Esmu krūms ar orandžām pērlēm jūras tuvumā. Kas es esmu?", answer: "silīcijs" },
+      { question: "Es sniedzos no mājas, klints augstumā, kur tu vari vērot, kā pasaule iet garām. Svaigs gaiss un labs skats ir ko piedāvāju katram.", answer: "balts" },
+      { question: "Es stāvu garš, sadalot zemes, slaids sargs bez rokām es stāvu kur saule aust un putni lido.", answer: "" },
+    ];
+
+    let currentRiddle = 0;
+
+    function displayRiddle() {
+      document.getElementById("riddle").innerText = riddles[currentRiddle].question;
+    }
+
+    function submitAnswer() {
+      const answer = document.getElementById("answer").value.toLowerCase().trim();
+
+      if (answer === riddles[currentRiddle].answer) {
+        currentRiddle++;
+        document.getElementById("answer").value = "";
+        document.getElementById("feedback").innerText = "";
+
+        if (currentRiddle < riddles.length) {
+          displayRiddle();
+        } else {
+          document.getElementById("riddle").innerText = "Apsveicam! Jūs esat pabeidzis/usi šo medību!";
+          document.getElementById("answer").style.display = "none";
+          document.getElementById("feedback").style.display = "none";
+        }
+      } else {
+        document.getElementById("feedback").innerText = "Nepareiza atbilde. Mēģiniet vēlreiz.";
+      }
+    }
+
+    displayRiddle();
+  </script>
+</body>
+</html>
