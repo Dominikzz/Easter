@@ -97,11 +97,15 @@ button:hover {
 <body>
   <h1>Laipni lūdzam, Alchemist</h1>
   <p id="riddle"></p>
-  <input type="text" id="answer" placeholder="Ievadiet atbildi šeit..." autocomplete="off" autocapitalize="none">
+  <input type="text" id="answer" placeholder="Ievadiet atbildi šeit...">
   <button onclick="submitAnswer()">Iesniegt</button>
   <div id="feedback"></div>
 
   <script>
+    function normalizeString(str) {
+      return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    }
+
     const riddles = [
       { question: "Es augu pret debesīm, mājvietu sniedzu putniem. Mani zari plati izplešas un cietus augļus sniedz. Pie manis slepenā vieta, atradīsi ko sirds kāro.", answer: "mikoloģija" },
       { question: "Zaļa žoga ieskauta, esmu stūra sargātāja. Kur saule aust, tur mani meklē.", answer: "1" },
@@ -117,9 +121,9 @@ button:hover {
     }
 
     function submitAnswer() {
-      const answer = document.getElementById("answer").value.toLowerCase().trim();
+      const answer = normalizeString(document.getElementById("answer").value);
 
-      if (answer === riddles[currentRiddle].answer) {
+      if (answer === normalizeString(riddles[currentRiddle].answer)) {
         currentRiddle++;
         document.getElementById("answer").value = "";
         document.getElementById("feedback").innerText = "";
@@ -139,4 +143,5 @@ button:hover {
     displayRiddle();
   </script>
 </body>
+
 </html>
