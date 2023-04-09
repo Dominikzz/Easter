@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Easter Scavenger Hunt</title>
+  <title>Lieldienu Medības</title>
   <style>
    * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
- 
+
 .animated-text {
   display: inline-block;
   width: 70%;
@@ -83,6 +83,22 @@ button:hover {
   background-color: #000000;
   color: #ffffff;
 }
+
+/* Media Query for mobile devices */
+@media screen and (max-width: 480px) {
+  .animated-text {
+    font-size: 18px;
+  }
+
+  input[type="text"] {
+    padding: 10px 15px;
+  }
+
+  button {
+    padding: 10px 15px;
+  }
+}
+
 
   </style>
 </head>
