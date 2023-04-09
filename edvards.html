@@ -74,6 +74,23 @@ button:hover {
 #feedback {
   margin-top: 40px;
 }
+
+/* Media Query for mobile devices */
+@media screen and (max-width: 480px) {
+  #riddle {
+    font-size: 18px;
+    width: 80%;
+  }
+
+  input[type="text"] {
+    width: 70%;
+    padding: 0.5rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -89,7 +106,7 @@ button:hover {
       { question: "Es esmu spēle, kas notiek plašos, zaļos laukos, kur iespējas ir neierobežotas, un precizitāte ir atslēga. Kāda spēle es esmu?", answer: "1.618" },
       { question: "Esmu krūms ar orandžām pērlēm jūras tuvumā. Kas es esmu?", answer: "silīcijs" },
       { question: "Es sniedzos no mājas, klints augstumā, kur tu vari vērot, kā pasaule iet garām. Svaigs gaiss un labs skats ir ko piedāvāju katram.", answer: "balts" },
-      { question: "Es stāvu garš, sadalot zemes, slaids sargs bez rokām es stāvu kur saule aust un putni lido.", answer: "" },
+      { question: "Es stāvu garš, sadalot zemes, slaids sargs bez rokām es stāvu kur saule aust un putni lido.", answer: "1" },
     ];
 
     let currentRiddle = 0;

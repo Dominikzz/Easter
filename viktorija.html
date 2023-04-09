@@ -74,6 +74,23 @@ button:hover {
 #feedback {
   margin-top: 40px;
 }
+
+/* Media Query for mobile devices */
+@media screen and (max-width: 480px) {
+  #riddle {
+    font-size: 18px;
+    width: 80%;
+  }
+
+  input[type="text"] {
+    width: 70%;
+    padding: 0.5rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -89,7 +106,7 @@ button:hover {
       { question: "Es esmu kaste, kas slēpj sevī prieku un izklaidi, gaidot, kad ģimene pulcējas kopā. Kur es esmu?", answer: "12" },
       { question: "Maza kastīte, kur mīt ziņu putni. Viņi atpūšas iekšā, līdz lido, saimnieka rokās. Kas es esmu?", answer: "zelts" },
       { question: "Es esmu mājvieta vārdiem un stāstiem, kur sapņi un piedzīvojumi glabājas starp vākiem. Kur es esmu?", answer: "ēģipte" },
-      { question: "Esmu vieta, kur uguns dejo un siltums staro, biedriem pulcējoties ap mani. Kur es esmu?", answer: "" },
+      { question: "Esmu vieta, kur uguns dejo un siltums staro, biedriem pulcējoties ap mani. Kur es esmu?", answer: "1" },
     ];
 
     let currentRiddle = 0;

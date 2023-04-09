@@ -74,6 +74,23 @@ button:hover {
 #feedback {
   margin-top: 40px;
 }
+
+/* Media Query for mobile devices */
+@media screen and (max-width: 480px) {
+  #riddle {
+    font-size: 18px;
+    width: 80%;
+  }
+
+  input[type="text"] {
+    width: 70%;
+    padding: 0.5rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -89,7 +106,7 @@ button:hover {
       { question: "Es esmu cilvēka rokās veidots, lai šķirtu ūdeni no zemes un savienotu vietas, kas citādi būtu šķirtas. Kur es esmu?", answer: "3.141" },
       { question: "Kur smiltis un jūra satiekas, stāvu es. Kur es esmu?", answer: "sāls" },
       { question: "Metāla tunelis, kas zem ceļa iet, lai savienotu abas puses. Kur es esmu?", answer: "lietuva" },
-      { question: "Es esmu kaste, kas glabā dažādas mantas, man patīk ceļojot pa plašām zemēm un jūrām. Kur es esmu?", answer: "" },
+      { question: "Es esmu kaste, kas glabā dažādas mantas, man patīk ceļojot pa plašām zemēm un jūrām. Kur es esmu?", answer: "1" },
     ];
 
     let currentRiddle = 0;
